@@ -1,12 +1,15 @@
 # bookmarks.yazi
 
+> [!NOTE]
+> Fork of [dedukun/bookmarks.yazi](https://github.com/dedukun/bookmarks.yazi) that replaces the deprecated `ya.mgr_emit()` with `ya.emit()`, which Yazi 26.x requires. Upstream has the same fix open as [#61](https://github.com/dedukun/bookmarks.yazi/pull/61) and [#66](https://github.com/dedukun/bookmarks.yazi/pull/66); once either is merged, use upstream instead.
+
 A [Yazi](https://github.com/sxyazi/yazi) plugin that adds the basic functionality of [vi-like marks](https://neovim.io/doc/user/motion.html#mark-motions).
 
 https://github.com/dedukun/bookmarks.yazi/assets/25795432/9a9fe345-dd06-442e-99f1-8475ab22fad5
 
 ## Requirements
 
-- [Yazi](https://github.com/sxyazi/yazi) v25.4.8+
+- [Yazi](https://github.com/sxyazi/yazi) v25.5.28+ (this fork uses `ya.emit()`; for older versions use upstream)
 
 ## Features
 
@@ -18,7 +21,7 @@ https://github.com/dedukun/bookmarks.yazi/assets/25795432/9a9fe345-dd06-442e-99f
 ## Installation
 
 ```sh
-ya pkg add dedukun/bookmarks
+ya pkg add martelsorel/bookmarks
 ```
 
 ## Import/Export bookmarks
@@ -33,7 +36,7 @@ the bookmarks are saved in DDS's state file (`~/.local/state/yazi/.dds` on Linux
 Add this to your `keymap.toml`:
 
 ```toml
-# If your yazi version is lower than v25.5.28, repleace "mgr" by "manager".
+# If your yazi version is lower than v25.5.28, replace "mgr" by "manager".
 [[mgr.prepend_keymap]]
 on = [ "m" ]
 run = "plugin bookmarks save"
